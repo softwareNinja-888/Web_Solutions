@@ -60,7 +60,7 @@
   --color-primaryText: #dbdbdb;
   --color-greenPrimary: #92ed79;
   --color-greenSecondary: #2fbd8e;
-  --color-primaryBg: #09080d;
+  --color-primaryBg: #000000;
 
   /*FONTS*/
 
@@ -77,7 +77,7 @@
 
 
 body{
-  background-color: #09080d;
+  background-color: #000000;
 }
 
 

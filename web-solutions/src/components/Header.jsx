@@ -16,7 +16,7 @@ export function Header(){
                     <Links linkName='Pricing' href="pricing" />
                     <Links linkName='Contact Us' href="contact"/>
                 </nav>
-                 <div id="contact_Btn" className="cursor-pointer flex border border-yellowCustom  text-white rounded-lg px-10 py-2 hover:bg-yellowCustom  hover:text-black transition duration-400 ease-in-out bg-black font-inter700 ">Let's Talk
+                 <div id="contact_Btn" className="cursor-pointer flex border border-yellowCustom  text-white rounded-lg px-10 py-2 hover:bg-yellowCustom  hover:text-black transition duration-400 ease-in-out bg-primaryBg font-inter700 ">Let's Talk
                  </div> 
                 {/*<FormModal/>*/}
             </div>

@@ -28,11 +28,11 @@ export function Video() {
   });
 
   return (
-    <section className="flex justify-center bg-primaryBg py-20 lg:py-[120px] ">
+    <section className="bg-black py-20 dark:bg-dark lg:py-[120px]">
       <div ref={domNode} className="container">
         <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="w-full px-4 lg:w-11/12 mx-auto">
-            <div className="relative z-20 h-[300px] overflow-hidden rounded-lg md:h-[550px]">
+          <div className="w-full px-4 lg:w-10/12">
+            <div className="relative z-20 h-[300px] overflow-hidden rounded-lg md:h-[450px]">
               <div className="absolute left-0 top-0 h-full w-full">
                 <img
                   src="/imgs/office.avif"
@@ -45,7 +45,7 @@ export function Video() {
               >
                 <a
                   onClick={() => setvideoOpen(true)}
-                  className="absolute z-20 flex h-20 w-20 items-center justify-center rounded-full bg-white text-black md:h-[100px] md:w-[100px] cursor-pointer"
+                  className="absolute z-20 flex h-20 w-20 items-center justify-center rounded-full bg-white text-primary dark:bg-dark-2 dark:text-white md:h-[100px] md:w-[100px] cursor-pointer"
                 >
                   <span className="absolute right-0 top-0 z-[-1] h-full w-full animate-ping rounded-full bg-white bg-opacity-20 delay-300 duration-1000"></span>
                   <svg
