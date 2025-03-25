@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+
+@font-face{
+    font-family: 'inter300';
+    src: url('./assets/fonts/Inter/static/Inter_18pt-Light.ttf') format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'inter400';
+    src: url('./assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'inter500';
+    src: url('./assets/fonts/Inter/static/Inter_18pt-Medium.ttf') format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'inter600';
+    src: url('./assets/fonts/Inter/static/Inter_28pt-SemiBold.ttf') format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'inter700';
+    src: url('./assets/fonts/Inter/static/Inter_18pt-Bold.ttf') format("truetype");
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face{
+    font-family: 'inter900';
+    src: url('./assets/fonts/Inter/static/Inter_18pt-Black.ttf') format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: 'poppins';
+    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+
+  --color-yellowCustom: #e2c376;
+  --color-cardBg: #171918;
+  --color-otherBlack: rgba(255,255,255,0.08);
+  --color-primaryText: #dbdbdb;
+  --color-greenPrimary: #92ed79;
+  --color-greenSecondary: #2fbd8e;
+  --color-primaryBg: #09080d;
+
+  /*FONTS*/
+
+  --font-inter300 : 'inter300','sans-serif';
+  --font-inter400 : 'inter400','sans-serif';
+  --font-inter500 : 'inter500','sans-serif';
+  --font-inter600 : 'inter600','sans-serif';
+  --font-inter700 : 'inter700','sans-serif';
+  --font-inter900 : 'inter900','sans-serif';
+  
+  --font-poppins : 'poppins','sans-serif'
+
+}
+
+
+body{
+  background-color: #09080d;
+}
+
+
+@keyframes marquee {
+  0% {transform:translateX(0%);}
+  100% {transform: translateX(-50%);}
+}
