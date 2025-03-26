@@ -1,4 +1,4 @@
-const createProject = (function(){
+export const createProject = (function(){
     let projects = [];
     let idCounter = 0;
 
@@ -45,7 +45,7 @@ export const information = [
 createProject.addProject({
     project_name: 'Salt&Light Blog',
     img: '/mockups/mockupBlog.png',
-    type: 'Christian Blog',
+    type: ' Blog',
     link: 'https://salt-light-blog.vercel.app/',
     gitHub:'',
 })
@@ -81,8 +81,8 @@ createProject.addProject({
 })
 createProject.addProject({
     project_name: 'Torch',
-    img: '/mockups/mockupHotel.png',
-    type: 'SaaS Landing Page',
+    img: '/mockups/mockupTorch.png',
+    type: 'Landing Page',
     link: 'https://torch-one.vercel.app/',
     gitHub:'',
 })

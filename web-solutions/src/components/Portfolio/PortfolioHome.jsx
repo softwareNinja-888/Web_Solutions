@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { PortfolioCard } from "./PortfolioCard";
+import { information } from "../../assets/data/data";
 
 export function PorfolioHome(){
       const [showCard, setShowCard] = useState("all");
     
-      const handleProject = (category) => {
-        setShowCard(category);
+      const handleProject = (type) => {
+        setShowCard(type);
       };
+
+
+    const Projects = information[1].projects
+    const types = ['All',...new  Set(Projects.map(item => item.type))];
+    console.log(types.map(type=>type.toLowerCase()))
     
       return (
         <>
-          <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
+          <section className="pt-20 pb-12 lg:pt-[20px] lg:pb-[90px] dark:bg-dark">
             <div className="container mx-auto">
               <div className="flex flex-wrap -mx-4">
                 <div className="w-full px-4">
@@ -32,118 +38,72 @@ export function PorfolioHome(){
               <div className="w-full flex flex-wrap justify-center -mx-4">
                 <div className="w-full px-4">
                   <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-                    <li className="mb-1">
-                      <button
-                        onClick={() => handleProject("all")}
-                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                          showCard === "all"
-                            ? "activeClasses bg-primary text-white"
-                            : "inactiveClasses text-white dark:text-dark-6 hover:bg-primary hover:text-white"
-                        }`}
-                      >
-                        All Projects
-                      </button>
+                    {types.map((type,index)=>{
+                      return (
+                        <li className="mb-1" key={index}>
+                          <button
+                            onClick={() => handleProject(`${type.toLowerCase()}`)}
+                            className={`inline-block rounded-lg py-2 px-5 text-center text-base font-inter600 transition md:py-3 lg:px-8 cursor-pointer ${
+                              showCard === type.toLowerCase()
+                                ? "activeClasses bg-greenSecondary text-white"
+                                : "inactiveClasses text-white  hover:bg-greenSecondary"
+                            }`}
+                          >
+                            {type}
+                          </button>
+                        </li>
+                      )
+                    })}
+                    {/* <li className="mb-1">
+                        <button
+                          onClick={() => handleProject("all")}
+                          className={`inline-block rounded-lg py-2 px-5 text-center text-base font-inter600 transition md:py-3 lg:px-8 cursor-pointer ${
+                            showCard === "all"
+                              ? "activeClasses bg-greenSecondary text-white"
+                              : "inactiveClasses text-white  hover:bg-greenSecondary"
+                          }`}
+                        >
+                          All
+                        </button>
                     </li>
                     <li className="mb-1">
                       <button
-                        onClick={() => handleProject("branding")}
-                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                          showCard === "branding"
-                            ? "activeClasses bg-primary text-white"
-                            : "inactiveClasses text-white dark:text-dark-6 hover:bg-primary hover:text-white"
+                        onClick={() => handleProject("landing page")}
+                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-inter600 transition md:py-3 lg:px-8 cursor-pointer ${
+                          showCard === "landing page"
+                            ? "activeClasses bg-greenSecondary text-white"
+                            : "inactiveClasses text-white  hover:bg-greenSecondary"
                         }`}
                       >
-                        Branding
+                        Landing Pages
                       </button>
-                    </li>
+                    </li>  
                     <li className="mb-1">
                       <button
-                        onClick={() => handleProject("design")}
-                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                          showCard === "design"
-                            ? "activeClasses bg-primary text-white"
-                            : "inactiveClasses text-white dark:text-dark-6 hover:bg-primary hover:text-white"
+                        onClick={() => handleProject("other")}
+                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-inter600 transition md:py-3 lg:px-8 cursor-pointer ${
+                          showCard === "other"
+                            ? "activeClasses bg-greenSecondary text-white"
+                            : "inactiveClasses text-white  hover:bg-greenSecondary"
                         }`}
                       >
-                        Design
+                        Other
                       </button>
-                    </li>
-                    <li className="mb-1">
-                      <button
-                        onClick={() => handleProject("marketing")}
-                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                          showCard === "marketing"
-                            ? "activeClasses bg-primary text-white"
-                            : "inactiveClasses text-white dark:text-dark-6 hover:bg-primary hover:text-white"
-                        }`}
-                      >
-                        Marketing
-                      </button>
-                    </li>
-                    <li className="mb-1">
-                      <button
-                        onClick={() => handleProject("development")}
-                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                          showCard === "development"
-                            ? "activeClasses bg-primary text-white"
-                            : "inactiveClasses text-white dark:text-dark-6 hover:bg-primary hover:text-white"
-                        }`}
-                      >
-                        Development
-                      </button>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
-              <div className="flex flex-wrap -mx-4">
-                <PortfolioCard
-                  ImageHref="/imgs/office.avif"
-                  category="Branding"
-                  title="Creative Agency"
-                  button="View Details"
-                  buttonHref="#"
-                  showCard={showCard}
-                />
-                <PortfolioCard
-                  ImageHref="/imgs/office1.avif"
-                  category="marketing"
-                  title="Creative Agency"
-                  button="View Details"
-                  buttonHref="#"
-                  showCard={showCard}
-                />
-                <PortfolioCard
-                  ImageHref="/imgs/office2.avif"
-                  category="marketing"
-                  title="Creative Agency"
-                  button="View Details"
-                  buttonHref="#"
-                  showCard={showCard}
-                />
-                <PortfolioCard
-                  ImageHref="/imgs/office3.avif"
-                  category="Development"
-                  title="Creative Agency"
-                  button="View Details"
-                  buttonHref="#"
-                  showCard={showCard}
-                />
-                <PortfolioCard
-                  ImageHref="/imgs/website.avif"
-                  category="Design"
-                  title="Creative Agency"
-                  button="View Details"
-                  buttonHref="#"
-                  showCard={showCard}
-                />
-                <PortfolioCard
-                  ImageHref="/imgs/website1.avif"
-                  category="Marketing"
-                  title="Creative Agency"
-                  button="View Details"
-                  buttonHref="#"
-                  showCard={showCard}
-                />
+              <div className="flex flex-wrap -mx-4 gap-y-20">
+                
+                  {Projects.map((project,index)=>{
+                    return(
+                      <PortfolioCard
+                      id={project.id}
+                      showCard={showCard} 
+                      key={index} />
+                    )
+
+                  })}
               </div>
             </div>
           </section>
