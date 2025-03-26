@@ -24,6 +24,38 @@ export const createProject = (function(){
         getProjectById: function(id){
             return projects.find(project=> project.id === id);
         },
+
+    }
+})()
+
+
+
+export const createPricing = (function(){
+    let prices = [];
+    let idCounter = 0;
+
+    return {
+        addPrice: function (price) {
+
+            const newPrice = {
+                id : idCounter++,
+                type: price.type,
+                price: price.price,
+                description: price.description || "Perfect for using in a personal website or a client project.",
+                buttonText: "Choose Meduim Business",
+                children: price.children,
+            };
+
+            prices.push(newPrice)
+            return newPrice;
+        },
+        getPricing: function(){
+            return prices;
+        },
+        getPricingById: function(id){
+            return prices.find(price=> price.id === id);
+        },
+        
     }
 })()
 
@@ -39,9 +71,17 @@ export const information = [
         get projects(){
             return createProject.getProjects()
         }
+    },
+    {
+        id:0,
+        name:'Pricing Info',
+        get pricing(){
+            return createPricing.getPricing()
+        }
     }
 ]
 
+// ADDING PROJECTS
 createProject.addProject({
     project_name: 'Salt&Light Blog',
     img: '/mockups/mockupBlog.avif',
@@ -49,7 +89,6 @@ createProject.addProject({
     link: 'https://salt-light-blog.vercel.app/',
     gitHub:'',
 })
-
 createProject.addProject({
     project_name: 'The Grand Hotel',
     img: '/mockups/mockupHotel.avif',
@@ -57,7 +96,6 @@ createProject.addProject({
     link: 'https://hotel-template-phi.vercel.app/',
     gitHub:'',
 })
-
 createProject.addProject({
     project_name: 'One Health',
     img: '/mockups/mockupOneHealth.avif',
@@ -85,4 +123,46 @@ createProject.addProject({
     type: 'Landing Page',
     link: 'https://torch-one.vercel.app/',
     gitHub:'',
+})
+
+// ADING PRICING
+
+createPricing.addPrice({
+    type: 'Basic Package',
+    price: 800,
+    buttonText: "Choose Basic Package",
+    children: [
+        "1 User",
+        "All UI components",
+        "Lifetime access",
+        "Free updates",
+        "Use on 1 (one) project",
+        "3 Months support",
+      ]
+})
+createPricing.addPrice({
+    type: 'Standard Package',
+    price: 2800,
+    buttonText: "Choose Standard Package",
+    children: [
+        "1 User",
+        "All UI components",
+        "Lifetime access",
+        "Free updates",
+        "Use on 1 (one) project",
+        "3 Months support",
+      ]
+})
+createPricing.addPrice({
+    type: 'Premium Package',
+    price: 5000,
+    buttonText: "Choose Premuim Package",
+    children: [
+        "1 User",
+        "All UI components",
+        "Lifetime access",
+        "Free updates",
+        "Use on 1 (one) project",
+        "3 Months support",
+      ]
 })
