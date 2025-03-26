@@ -1,9 +1,5 @@
 Since your business focuses on website creation, your homepage should immediately showcase your expertise, build trust, and guide visitors toward taking action. Here's a minimal yet effective homepage structure:  
  
- 
-### **5. Testimonials & Social Proof**  
-- Show client reviews or video testimonials  
-- Logos of brands you’ve worked with (if applicable)  
 
 ### **6. Pricing Teaser (Optional)**  
 - A small section teasing your pricing (e.g., "Plans starting at E1,500")  

@@ -44,7 +44,7 @@ export const information = [
 
 createProject.addProject({
     project_name: 'Salt&Light Blog',
-    img: '/mockups/mockupBlog.png',
+    img: '/mockups/mockupBlog.avif',
     type: ' Blog',
     link: 'https://salt-light-blog.vercel.app/',
     gitHub:'',
@@ -52,7 +52,7 @@ createProject.addProject({
 
 createProject.addProject({
     project_name: 'The Grand Hotel',
-    img: '/mockups/mockupHotel.png',
+    img: '/mockups/mockupHotel.avif',
     type: 'Landing Page',
     link: 'https://hotel-template-phi.vercel.app/',
     gitHub:'',
@@ -60,28 +60,28 @@ createProject.addProject({
 
 createProject.addProject({
     project_name: 'One Health',
-    img: '/mockups/mockupOneHealth.png',
+    img: '/mockups/mockupOneHealth.avif',
     type: 'Landing Page',
     link: 'https://one-health-three.vercel.app/',
     gitHub:'',
 })
 createProject.addProject({
     project_name: 'One Hope',
-    img: '/mockups/mockupOneHope.png',
+    img: '/mockups/mockupOneHope.avif',
     type: 'Landing Page',
     link: 'https://one-hope-virid.vercel.app/',
     gitHub:'',
 })
 createProject.addProject({
     project_name: 'Salt&Light Ministries',
-    img: '/mockups/mockupSalt&light.png',
+    img: '/mockups/mockupSalt&light.avif',
     type: 'Chrsitian Directory',
     link: 'https://salt-light-9h3y.vercel.app/',
     gitHub:'',
 })
 createProject.addProject({
     project_name: 'Torch',
-    img: '/mockups/mockupTorch.png',
+    img: '/mockups/mockupTorch.avif',
     type: 'Landing Page',
     link: 'https://torch-one.vercel.app/',
     gitHub:'',
