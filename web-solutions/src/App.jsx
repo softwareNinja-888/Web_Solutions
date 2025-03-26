@@ -12,6 +12,7 @@ import { WhyUs } from './components/About/WhyUs'
 import { Video } from './components/Video'
 import { Team } from './components/Team'
 import { Projects } from './components/Projects'
+import { Testimonials } from './components/Testimonials'
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <About/>
         <Pricing/>
         <WhyUs sectionWidth='w-11/12'/>
+        <Testimonials/>
         <Team/>
 
       </div>

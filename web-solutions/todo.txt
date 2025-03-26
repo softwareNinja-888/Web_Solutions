@@ -1,17 +1,6 @@
 Since your business focuses on website creation, your homepage should immediately showcase your expertise, build trust, and guide visitors toward taking action. Here's a minimal yet effective homepage structure:  
-
-### **2. Showcase of Your Work**  
-- A section displaying **featured projects** or a **screenshot slider**  
-- A link to the full **Projects** page  
-
-### **3. Why Choose Us? (Unique Selling Points)**  
-- A few **key benefits** (e.g., fast delivery, mobile-friendly, SEO-optimized, affordable pricing)  
-- Icons or short descriptions for each benefit  
-
-### **4. Services Overview**  
-- A preview of your main services (e.g., "Custom Website Design," "E-commerce Solutions," "SEO Optimization")  
-- A **CTA to the full Services page**  
-
+ 
+ 
 ### **5. Testimonials & Social Proof**  
 - Show client reviews or video testimonials  
 - Logos of brands you’ve worked with (if applicable)  
