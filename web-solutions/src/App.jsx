@@ -11,6 +11,7 @@ import { Pricing } from './components/Pricing'
 import { WhyUs } from './components/About/WhyUs'
 import { Video } from './components/Video'
 import { Team } from './components/Team'
+import { Projects } from './components/Projects'
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <div className="overflow-hidden">
         <Hero/>
         <ClientDisplay/>
+        <Projects/>
         <Video/>
         <Services/>
         <About/>
