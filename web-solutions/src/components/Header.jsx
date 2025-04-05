@@ -1,25 +1,60 @@
-// import { FormModal } from "./Helper/Modal";
+import { MobileMenu } from './Helper/MobileMenu'
 import { Links } from "./Helper/Links";
-import { NavLink } from "react-router";
 
-export function Header(){
-    return (
+import { NavLink, } from 'react-router'
+import { useState } from 'react';
+
+export function Header({
+    logoImg='/logo.svg',
+    links=['link1','link2','link3','link4',],
+    btnName="Let's Talk",
+    sticky=true,}
+){
+
+    
+    const [menuOpen, setMenuOpen ] = useState(false)
+
+    return ( 
         <>
-            <div className="flex justify-between items-center text-white px-20 py-10">
+			<div className={`flex justify-between items-center text-white px-10 lg:px-20 py-10 bg-black ${sticky ? 'sticky top-0 z-50' : null}`}>
                 <NavLink to='/' className=''>
                     <img src="/logo1.svg" alt="logo" className="w-16 h-16" />
                 </NavLink>
-                <nav className="flex text-gray-300 gap-10 ">
-                    <Links linkName='Our Services' href="services"/>
-                    <Links linkName='About Us' href="about"/>
-                     <Links linkName='Our Work' href="portfolio" /> 
-                    <Links linkName='Pricing' href="pricing" />
-                    <Links linkName='Contact Us' href="contact"/>
+				
+                <nav className="hidden lg:flex lg:space-x-10 text-sm ">
+                
+                    {links.map((link,index)=>{
+                        return (
+                         
+                            <Links key={index} linkName={link.title} href={link.href}/>
+
+                        )
+                    })}
                 </nav>
-                 <div id="contact_Btn" className="cursor-pointer flex border border-yellowCustom  text-white rounded-lg px-10 py-2 hover:bg-yellowCustom  hover:text-black transition duration-400 ease-in-out bg-primaryBg font-inter700 ">Let's Talk
-                 </div> 
-                {/*<FormModal/>*/}
-            </div>
-        </>
+                <div id="contact_Btn" className="cursor-pointer hidden lg:flex border border-yellowCustom  text-white  px-10 py-2 hover:bg-yellowCustom  hover:text-black hover:rounded-lg transition-all duration-700 ease-in-out bg-primaryBg font-inter700 ">
+                    {btnName}
+                </div>
+
+                <div className="lg:hidden">
+                    <svg
+                        onClick={() => setMenuOpen(!menuOpen)} 
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+            	    {menuOpen && <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+                </div>		
+
+				
+			</div>
+            	
+		</>
     )
 }
