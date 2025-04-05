@@ -12,7 +12,6 @@ import { Video } from './components/Video'
 import { Team } from './components/Team'
 import { Projects } from './components/Projects'
 import { Testimonials } from './components/Testimonials'
-import { Hero2 } from './components/Hero2'
 
 
 
