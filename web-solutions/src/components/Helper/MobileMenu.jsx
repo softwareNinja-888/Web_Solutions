@@ -1,11 +1,13 @@
 import closeLight from '/closeLight.avif'
+import { Links } from './Links';
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router'
 
 export function MobileMenu({ menuOpen, setMenuOpen }){
 
-  const navigate = useNavigate()
+  const links =   [{title:'Our Services',href:'services'},{title:'About Us',href:'about'},{title:'Our Work',href:'portfolio'},{title:'Pricing',href:'pricing'},{title:'Contact Us',href:'contact'},]
+
 
   // function handleImg(){
   //   return theme === 'light' ? xLight : xDark;
@@ -25,11 +27,16 @@ export function MobileMenu({ menuOpen, setMenuOpen }){
     },
   };
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
+  // TODO FIX LINK BUG.MENU DOESNT CLOSE
+  
   function handleNavigation(path){
-    // navigate(path)
-    setMenuOpen()
+    navigate(path)
+    console.log(menuOpen)
+    setMenuOpen(false)
+
+    console.log(menuOpen)
   }
    
 
@@ -37,7 +44,7 @@ export function MobileMenu({ menuOpen, setMenuOpen }){
     <>
       {/* Background Overlay */}
       <motion.div
-        className="fixed inset-0 bg-white dark:bg-theme bg-opacity-100 z-40"
+        className="fixed inset-0 bg-black dark:bg-theme bg-opacity-100 z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: menuOpen ? 1 : 0 }}
         transition={{ duration: 0.5 }}
@@ -56,12 +63,20 @@ export function MobileMenu({ menuOpen, setMenuOpen }){
         <img src={closeLight} onClick={() => setMenuOpen(false)} className="absolute top-10 right-10 text-2xl w-5" />
 
         {/* Links */}
+      
         <nav className="flex flex-col space-y-4 text-lg font-poppins items-center">
-          <div onClick={()=>{handleNavigation("/")}} className="dark:text-white hover:underline">Home</div>
-          <div onClick={()=>{handleNavigation("/blogs")}}className="dark:text-white hover:underline">Blogs</div>
+            
+            {links.map((link,index)=>{
+                return (
+                  
+                    <Links key={index} linkName={link.title} href={link.href} onClick={()=> {handleNavigation(link.href)}}/>
+
+                )
+            })}
+          {/* <div onClick={()=>{handleNavigation("/blogs")}}className="dark:text-white hover:underline">Our Services</div>
           <div onClick={()=>{handleNavigation("/donate")}} className="dark:text-white hover:underline">Donate</div>
           <div onClick={()=>{handleNavigation("/aboutus")}} className="dark:text-white hover:underline">About Us</div>
-          <div onClick={()=>{handleNavigation("/signup")}} className='dark:text-white'>Login/SignUp</div>
+          <div onClick={()=>{handleNavigation("/signup")}} className='dark:text-white'>Login/SignUp</div> */}
 {/*            {IsLoggedIn ? <div onClick={()=>{handleNavigation(`profile/${ActiveUser}`)}}>Profile</div>:
                           <>
                             <div onClick={()=>{handleNavigation("/signup")}}>Login/SignUp</div>

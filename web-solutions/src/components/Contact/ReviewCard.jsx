@@ -4,7 +4,7 @@ export function ReviewCard(){
 
     return (
         <>
-            <div className="flex flex-col gap-8 border border-primary bg-primary w-110 h-58 px-3 py-5 rounded-2xl -rotate-3">
+            <div className="flex flex-col gap-8 border-4 border-primary bg-primary w-110 h-58 px-3 py-5 rounded-2xl -rotate-3">
                 <StarRating rating={5}/>
                 <div className="">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, vel quo aperiam in fugiat at et rem ."</div>
                 <div className="flex gap-2">

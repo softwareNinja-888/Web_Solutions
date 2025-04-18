@@ -83,12 +83,20 @@ export const information = [
 
 // ADDING PROJECTS
 createProject.addProject({
+    project_name: 'NOMA Skincare',
+    img: '/mockups/mockupNOMA.avif',
+    type: ' Landing Page',
+    link: 'https://noma-skincare.vercel.app/',
+    gitHub:'',
+})
+createProject.addProject({
     project_name: 'Salt&Light Blog',
     img: '/mockups/mockupBlog.avif',
     type: ' Blog',
     link: 'https://salt-light-blog.vercel.app/',
     gitHub:'',
 })
+
 createProject.addProject({
     project_name: 'The Grand Hotel',
     img: '/mockups/mockupHotel.avif',
