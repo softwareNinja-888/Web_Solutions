@@ -53,6 +53,7 @@ import { NavLink } from "react-router";
 export function  PortfolioCard({
     id,
     showCard,
+    underConstruction=false
   }) {
 
     const project  = createProject.getProjectById(id)
@@ -72,7 +73,10 @@ export function  PortfolioCard({
                         <img src={project.img} alt={`${project.project_name} mockup`} className="cursor-pointer" />
                     </div>
                     <div className="px-5 text-greenPrimary">
-                        <div className="flex items-center gap-2"><MdLinearScale className=''/>{project.type}</div>
+                        <div className="flex justify-between">
+                          <div className="flex items-center gap-2"><MdLinearScale className=''/>{project.type}</div>
+                          <div className="text-white font-inter900">{underConstruction ? 'Site under development': ''}</div>
+                        </div>
                         <div className="font-bold text-xl text-white">{project.project_name}</div>
                     </div>
             </NavLink>

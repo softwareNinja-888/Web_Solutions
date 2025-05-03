@@ -12,6 +12,7 @@ export function PorfolioHome(){
 
     const Projects = information[1].projects
     const types = ['All',...new  Set(Projects.map(item => item.type))];
+    const numberOfProjectsCompleted = 3;
     console.log(types.map(type=>type.toLowerCase()))
     
       return (
@@ -100,7 +101,9 @@ export function PorfolioHome(){
                       <PortfolioCard
                       id={project.id}
                       showCard={showCard} 
-                      key={index} />
+                      key={index} 
+                      underConstruction={index >= numberOfProjectsCompleted}
+                      />
                     )
 
                   })}

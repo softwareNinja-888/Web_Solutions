@@ -131,27 +131,27 @@ import { motion } from "framer-motion";
 import { information } from "../assets/data/data";
 
 export function Pricing() {
-  function PricingCard({ children, description, price, type, subscription, buttonText, active }) {
+  function PricingCard({ children, description, price, type, buttonText, active }) {
+    console.log('ch:',buttonText)
     return (
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="w-full px-4 md:w-1/2 lg:w-1/3"
+        className="w-full px-4 md:w-1/2 lg:w-1/3 min-h-[540px] "
       >
         <div
-          className={`relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 border-stroke bg-primaryBg px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px] ${
-            type === "Business" ? "shadow-[-1px_0_6px] transform scale-103 shadow-greenPrimary" : ""
+          className={`relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 border-greenSecondary bg-primaryBg px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px] ${
+            type === "Standard Package" ? "shadow-[-1px_0_6px] transform scale-103 shadow-greenPrimary" : ""
           }`}
         >
           <span className="mb-3 block text-lg font-semibold text-greenSecondary">{type}</span>
           <h2 className="mb-5 text-[42px] font-bold text-white">
-            {price}
-            <span className="text-base font-medium text-white">/ {subscription}</span>
+            R {price}
           </h2>
-          <p className="mb-8 border-b border-stroke pb-8 text-base text-white">{description}</p>
-          <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
+          <div className="mb-8 border-b border-stroke pb-8 text-base text-white h-25 font-inter500">{description}</div>
+          <div className="mb-9 flex flex-col gap-[14px] h-55">{children}</div>
           <motion.a
             whileHover={{ scale: 1.05 }}
             href="/#"
@@ -171,9 +171,11 @@ export function Pricing() {
     );
   }
 
-  const List = ({ children }) => <p className="text-base text-white">{children}</p>;
+  const List = ({ children }) => <p className="text-base text-white font-inter300">{children}</p>;
 
   const pricing = information[2].pricing
+  console.log('Price:',pricing)
+
 
   return (
     <motion.section
@@ -181,7 +183,7 @@ export function Pricing() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative z-10 overflow-hidden bg-primaryBg pb-12 pt-20 lg:pb-[90px] lg:pt-[120px] w-11/12 mx-auto"
+      className="relative z-10 overflow-hidden bg-primaryBg pb-12 pt-20 lg:pb-[90px] lg:pt-[120px] w-12/12 mx-auto"
     >
       <div className="container mx-auto">
         {/* Animated heading */}
@@ -205,56 +207,9 @@ export function Pricing() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="-mx-4 flex flex-wrap gap-0" >
-            {[
-              {
-                type: "Personal",
-                price: "$59",
-                subscription: "year",
-                description: "Perfect for using in a personal website or a client project.",
-                buttonText: "Choose Personal",
-                children: [
-                  "1 User",
-                  "All UI components",
-                  "Lifetime access",
-                  "Free updates",
-                  "Use on 1 (one) project",
-                  "3 Months support",
-                ],
-              },
-              {
-                type: "Business",
-                price: "$199",
-                subscription: "year",
-                description: "Perfect for using in a personal website or a client project.",
-                buttonText: "Choose Business",
-                active: true,
-                children: [
-                  "5 Users",
-                  "All UI components",
-                  "Lifetime access",
-                  "Free updates",
-                  "Use on 3 (Three) projects",
-                  "4 Months support",
-                ],
-              },
-              {
-                type: "Professional",
-                price: "$256",
-                subscription: "year",
-                description: "Perfect for using in a personal website or a client project.",
-                buttonText: "Choose Professional",
-                children: [
-                  "Unlimited Users",
-                  "All UI components",
-                  "Lifetime access",
-                  "Free updates",
-                  "Unlimited projects",
-                  "12 Months support",
-                ],
-              },
-            ].map((plan, index) => (
+        <div className="flex  flex-wrap justify-center">
+          <div className=" flex flex-col lg:flex-row justify-center items-center w-12/12 gap-10" >
+            {pricing.map((plan, index) => (
               <PricingCard key={plan.type} {...plan}>
                 {plan.children.map((feature, i) => (
                   <List key={i}>{feature}</List>

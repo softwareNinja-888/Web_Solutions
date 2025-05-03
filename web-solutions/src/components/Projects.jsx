@@ -6,7 +6,7 @@ import { information } from "../assets/data/data";
 import { motion } from "framer-motion";
 
 export function Projects() {
-    const topProjects = information[1].projects.slice(0, 4);
+    const topProjects = information[1].projects.slice(0, 3);
 
     return (
         <motion.div 

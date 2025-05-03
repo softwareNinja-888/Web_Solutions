@@ -42,7 +42,7 @@ export const createPricing = (function(){
                 type: price.type,
                 price: price.price,
                 description: price.description || "Perfect for using in a personal website or a client project.",
-                buttonText: "Choose Meduim Business",
+                buttonText: price.buttonText || "Choose Meduim Business",
                 children: price.children,
             };
 
@@ -85,7 +85,7 @@ export const information = [
 createProject.addProject({
     project_name: 'NOMA Skincare',
     img: '/mockups/mockupNOMA.avif',
-    type: ' Landing Page',
+    type: 'Landing Page',
     link: 'https://noma-skincare.vercel.app/',
     gitHub:'',
 })
@@ -96,14 +96,6 @@ createProject.addProject({
     link: 'https://salt-light-blog.vercel.app/',
     gitHub:'',
 })
-
-createProject.addProject({
-    project_name: 'The Grand Hotel',
-    img: '/mockups/mockupHotel.avif',
-    type: 'Landing Page',
-    link: 'https://hotel-template-phi.vercel.app/',
-    gitHub:'',
-})
 createProject.addProject({
     project_name: 'One Health',
     img: '/mockups/mockupOneHealth.avif',
@@ -111,6 +103,14 @@ createProject.addProject({
     link: 'https://one-health-three.vercel.app/',
     gitHub:'',
 })
+createProject.addProject({
+    project_name: 'The Grand Hotel',
+    img: '/mockups/mockupHotel.avif',
+    type: 'Landing Page',
+    link: 'https://hotel-template-phi.vercel.app/',
+    gitHub:'',
+})
+
 createProject.addProject({
     project_name: 'One Hope',
     img: '/mockups/mockupOneHope.avif',
@@ -139,38 +139,40 @@ createPricing.addPrice({
     type: 'Basic Package',
     price: 800,
     buttonText: "Choose Basic Package",
+    description: "Perfect for small businesses who want to showcase products or services online",
     children: [
-        "1 User",
-        "All UI components",
-        "Lifetime access",
-        "Free updates",
-        "Use on 1 (one) project",
-        "3 Months support",
+        "- Custom Design",
+        "- Mobile Responsiveness",
+        "- Basic Contact Form",
+        "- SEO Optimization (basic)",
+        "- 2 Rounds of Revisions"
       ]
 })
 createPricing.addPrice({
     type: 'Standard Package',
-    price: 2800,
+    price: 2000,
     buttonText: "Choose Standard Package",
+    description: "Perfect for small and meduim businesses who truly want to standout from competiton online.",
     children: [
-        "1 User",
-        "All UI components",
-        "Lifetime access",
-        "Free updates",
-        "Use on 1 (one) project",
-        "3 Months support",
+        "- Everyhing in Basic package",
+        "- Fully Personalized Design",
+        "- Interactive Features",
+        "- Advandced SEO & Anayltics",
+        "- Unlimited  Revisions"
       ]
+
 })
 createPricing.addPrice({
-    type: 'Premium Package',
+    type: 'Premium Package (Full Website)',
     price: 5000,
     buttonText: "Choose Premuim Package",
+    description: "Perfect for any businesses that wants to do their business online. Has everyhing in standard package plus below:",
     children: [
-        "1 User",
-        "All UI components",
-        "Lifetime access",
-        "Free updates",
-        "Use on 1 (one) project",
-        "3 Months support",
+        "- Everyhing in Standard package",
+        "- 5 - 10 Pages ",
+        "- Advanced Animations & interactions",
+        "- E-commerce Integration & Blog Setup",
+        "- SEO Advanced (With keyword research)",
+        "- Unlimited Revisions",
       ]
 })
